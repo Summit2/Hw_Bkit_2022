@@ -1,4 +1,4 @@
-#
+1#
 #from readline import append_history_file
 import sys
 import math
@@ -14,15 +14,29 @@ def get_coef(index, prompt):
     Returns:
         float: Коэффициент квадратного уравнения
     '''
+    
     try:
         # Пробуем прочитать коэффициент из командной строки
         coef_str = sys.argv[index]
     except:
         # Вводим с клавиатуры
         print(prompt)
-        coef_str = input()
+        
     # Переводим строку в действительное число
-    coef = float(coef_str)
+        
+        while True:
+
+            try:
+
+                coef = float(input())
+                break
+            except:
+                print("Преобразование во float не прошло, повторите ввод:")
+                
+
+
+        
+
     return coef
 
 
